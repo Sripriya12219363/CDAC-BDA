@@ -1,3 +1,5 @@
+import json
+
 students=[{"id":1, "name": "Aarav Sharma", "course": "Python Core", "marks":88.50, "grade":"A"},
           {"id":2, "name": "Diya Patel", "course": "Data Science", "marks":74.00, "grade":"B"},
           {"id":3, "name": "Rohan Nair", "course": "Web Architecture", "marks":45.00, "grade":"F"},
@@ -39,8 +41,8 @@ def enroll(name, course, marks):
     else:
         grade="F"
 
-    students.append({"id":id_counter,"name":name, "course":course, "marks":marks, "grade":grade})
     id_counter+=1
+    students.append({"id":id_counter,"name":name, "course":course, "marks":marks, "grade":grade})
 
     print("Student added successfully")
 
@@ -115,16 +117,19 @@ def display_student(res):
 
 def purge_record():
     try:
-        id=int(input("Enter the id for which you want to delete: "))
-        a=search_by_id(id)
-        ans=input("Are you sure you want to delete (y/n): ").lower()
-        if ans=="y":
-            del a['id'] 
+        sid=int(input("Enter the id for which you want to delete: "))
+        a=search_by_id(sid)
+        if not a:
+            return
+        a = a[0]
+        ans=input("Are you sure you want to delete (y/n): ").lower().strip()
+        print(ans)
+        if ans == 'y':
+            students.remove(a)
             print("Entry deleted successfully.")
             display_student(students)
-        else:
-            print("Okayy continue with next process!!!")
-    except:
+        
+    except ValueError:
         print("Enter valid input as mentioned.")
 
 
@@ -143,6 +148,22 @@ def update():
     else:
         print("Record not found try adding first.")
 
+def json_save():
+    try:
+        filename=input("Enter the name of the file you want to save your data: ")
+        with open(filename, "wt") as f:
+            json.dump(students,f)
+    except:
+        print("Error Occurred")
+
+def json_load():
+    try:
+        filename=input("Enter the name of file you want to load the contents of: ")
+        with open(filename, "r") as f:
+            a=json.load(f)
+        print(a)
+    except:
+        print("Error occurred")
 
 
 def main():
@@ -163,9 +184,9 @@ def main():
             case 5:
                 purge_record()          #purge record i.e. delete
             case 6:
-                ...
+                json_save()
             case 7:
-                ...
+                json_load()
             case 8:
                 break
             case _:
