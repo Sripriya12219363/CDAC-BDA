@@ -1,0 +1,13 @@
+{
+    "total_students": 8,
+    "average_score": 89.38,
+    "top_scorer": {
+        "name": "Vinod",
+        "score": 96.5
+    },
+    "course_counts": {
+        "AI": 3,
+        "BDA": 3,
+        "Cloud": 2
+    }
+}
