@@ -1,0 +1,50 @@
+[
+  {
+    "timestamp": "2026-09-01 10:15:30",
+    "user_id": "USR102",
+    "endpoint": "/api/v1/predict",
+    "status_code": 200
+  },
+  {
+    "timestamp": "2026-09-01 10:16:45",
+    "user_id": "USR105",
+    "endpoint": "/api/v1/login",
+    "status_code": 200
+  },
+  {
+    "timestamp": "2026-09-01 10:18:12",
+    "user_id": "USR102",
+    "endpoint": "/api/v1/predict",
+    "status_code": 500
+  },
+  {
+    "timestamp": "2026-09-01 10:20:05",
+    "user_id": "USR108",
+    "endpoint": "/api/v1/results",
+    "status_code": 200
+  },
+  {
+    "timestamp": "2026-09-01 10:22:33",
+    "user_id": "USR103",
+    "endpoint": "/api/v1/predict",
+    "status_code": 400
+  },
+  {
+    "timestamp": "2026-09-01 10:25:17",
+    "user_id": "USR105",
+    "endpoint": "/api/v1/logout",
+    "status_code": 200
+  },
+  {
+    "timestamp": "2026-09-01 10:27:49",
+    "user_id": "USR109",
+    "endpoint": "/api/v1/predict",
+    "status_code": 200
+  },
+  {
+    "timestamp": "2026-09-01 10:30:21",
+    "user_id": "USR103",
+    "endpoint": "/api/v1/results",
+    "status_code": 404
+  }
+]
