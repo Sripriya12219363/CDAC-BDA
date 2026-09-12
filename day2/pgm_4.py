@@ -16,5 +16,5 @@ def main():
             u+= 1
         else:
             c+= 1
-    print(a,e,i,o,u,c-l)
+    print(f"a: {a}\ne: {e}\ni: {i}\no: {o}\nu: {u}\nTotal Consonants: {c-l}")
 main()
